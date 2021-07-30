@@ -1,38 +1,32 @@
-import axios from 'axios';
+import axios from "axios";
 
-axios.defaults.baseURL = 'https://pixabay.com/api';
+export default class NewsApiService {
+    constructor (){
+        this.searchQuery = '';
+        this.page = 1;
+        this.totalHits = '';
 
-const API_KEY = '22668325-829eebec8d763e484fb933a72';
+    }
 
-export default {
-  searchQuery: '',
-  page: 1,
+    async fetchArticles() {
+        const url =`https://pixabay.com/api/?key=22578117-98ddcf36fbc3d0da8c48aeee6&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=40`;
+        const response = await axios.get(url);
+            this.page +=1;
+            return response.data;
 
-  fetchImg() {
-    return axios
-      .get(
-        `/?image_type=photo&orientation=horizontal&q=${this.query}&page=${this.page}&per_page=12&key=${API_KEY}`,
-      )
-      .then(({ data }) => {
-        this.incrementPage();
-        return data.hits;
-      })
-      .catch(error => console.error(error));
-  },
+        }
+        
+    resetPage () {
+        this.page = 1;
+    };
+    
+    get query() {
+        return this.searchQuery;
+    }
+    
+    set query(newQuery) {
+     this.searchQuery = newQuery;
+ }
 
-  incrementPage() {
-    this.page += 1;
-  },
+}
 
-  resetPage() {
-    this.page = 1;
-  },
-
-  get query() {
-    return this.searchQuery;
-  },
-
-  set query(value) {
-    this.searchQuery = value;
-  },
-};

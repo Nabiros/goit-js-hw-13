@@ -40,13 +40,12 @@
 
 .material-icons {
   margin-top: 10px;
-  margin-left: 14px;
-  width: 5px;
   display: flex;
-  justify-content: space-between;
-  color: aqua;
+  color: rgb(52, 208, 255);
 }
 
-i > textContent {
-  color: aqua;
+.icon-text {
+  font-size: 12px;
+  font-style: italic;
+  display: flex;
 }

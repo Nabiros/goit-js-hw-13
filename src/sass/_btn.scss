@@ -1,15 +1,24 @@
-.button {
+.load-more {
   display: block;
-  margin-top: 20px;
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.button.is-hidden {
+.load-more.is-hidden {
   display: none;
 }
 
-.button > .spinner.is-hidden {
+.load-more > .spinner.is-hidden {
   display: none;
+}
+
+.searchBtn {
+  display: flex;
+  padding: 5px 6px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  border-radius: 15px;
 }

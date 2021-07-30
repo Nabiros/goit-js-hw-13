@@ -1,0 +1,26 @@
+{{#each this}}
+<li class='photo-card'>
+  <a data-fslightbox href='{{largeImageURL}}' class='image-link'>
+    <img src='{{webformatURL}}' alt={{tags}} class='card-image js-image' data-source='{{largeImageURL}}'
+      loading="lazy" />
+  </a>
+  <ul class='stats'>
+    <li class='stats-item'>
+      <i class='material-icons'>thumb_up</i>
+      <b class='icon-text'>{{likes}}</b>
+    </li>
+    <li class='stats-item'>
+      <i class='material-icons'>visibility</i>
+      <b class='icon-text'>{{views}}</b>
+    </li>
+    <li class='stats-item'>
+      <i class='material-icons'>comment</i>
+      <b class='icon-text'>{{comments}}</b>
+    </li>
+    <li class='stats-item'>
+      <i class='material-icons'>cloud_download</i>
+      <b class='icon-text'>{{downloads}}</b>
+    </li>
+  </ul>
+</li>
+{{/each}}

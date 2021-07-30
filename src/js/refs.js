@@ -1,7 +1,6 @@
 export default {
-  form: document.querySelector('#search-form'),
-  gallery: document.querySelector('.js-gallery'),
-  loadMoreBtn: document.querySelector('button[data-action="load-more"]'),
-  loadMoreLabel: document.querySelector('button[data-action="load-more"] > .label'),
-  loadMoreSpinner: document.querySelector('button[data-action="load-more"] > .spinner'),
-};
+    searchForm: document.querySelector('.search-form'),
+    galleryCards: document.querySelector('.gallery'),
+    searchBtn: document.querySelector('.searchBtn'),
+    loadMoreBtn: document.querySelector('.load-more'),
+}
