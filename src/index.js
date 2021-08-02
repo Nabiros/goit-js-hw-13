@@ -14,8 +14,6 @@ const newsApiService = new NewsApiService();
 refs.searchForm.addEventListener('submit', onSearch)
 refs.loadMoreBtn.addEventListener('click', onLoad)
 
-refs.loadMoreBtn.classList.add('is-hidden');
-
 
 async function onSearch(e){
     e.preventDefault();
@@ -23,7 +21,12 @@ async function onSearch(e){
     newsApiService.query = e.currentTarget.elements.searchQuery.value;
     
     try {
+        
+        refs.loadMoreBtn.classList.add('is-hidden');
         const result = await newsApiService.fetchArticles();
+        gallery.refresh();
+        refs.loadMoreBtn.classList.remove('is-hidden');
+
         
         if (newsApiService.query.trim() === '' || result.hits.length === 0){    
             clearCardsContainer();
